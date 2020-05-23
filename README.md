@@ -1,21 +1,39 @@
-# Tailwind CSS example
+# Mobile Flashcards
 
-<p>
-  <!-- iOS -->
-  <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
-  <!-- Android -->
-  <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-  <!-- Web -->
-  <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
-</p>
+Mobile Flashcards is a mobile application (Android or iOS - or both) that allows users to study collections of flashcards. The app allows users to create different categories of flashcards called "decks", add flashcards to those decks, then take quizzes on those decks.
 
 ## 🚀 How to use
 
 - Install with `yarn` or `npm install`.
 - Run `expo start` to try it out.
 
-## 📝 Notes
+### Scripts
 
-- This example using the [`tailwind-rn`](https://github.com/vadimdemedes/tailwind-rn) library to allow you to use [Tailwind CSS](https://tailwindcss.com/) in React Native.
-- You can even customize it to use your own styles or colors. Read more about that [here](https://github.com/vadimdemedes/tailwind-rn#customization).
+- `yarn start`: runs the app in development mode
+- `yarn run ios`: builds the app for iOS
+- `yarn run test`: runs the test watcher in an interactive mode
+- `yarn run eject`: ejects the app so you have full control over configuration files and transitive dependencies
+
+## Create React Native App
+
+This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
+
+Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
+
+## Built With
+
+* [React](https://reactjs.org/) - A JavaScript library for building user interfaces
+* [React Native](https://facebook.github.io/react-native/) - A framework for building native apps using React
+* [expo](https://expo.io/) - A toolchain built around React Native to help us build native apps using JavaScript and React
+* [React Navigation (v2)](https://reactnavigation.org/) - Routing and navigation for your React Native apps
+* [Redux](https://redux.js.org/) - Redux is a predictable state container for JavaScript apps
+* [react-redux](https://github.com/reactjs/react-redux) - Official React bindings for Redux
+
+## 📝 Tailwind CSS in use at mobile-flashcards project
+
+- I am using the [`tailwind-rn`](https://github.com/vadimdemedes/tailwind-rn) library to learn how to use it and giving React Native project a different styling type.
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs/utility-first).
+
+## Contributing
+
+You are always welcome to contribute with the project.
