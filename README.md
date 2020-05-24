@@ -25,7 +25,7 @@ Below you'll find information about performing common tasks. The most recent ver
 * [React](https://reactjs.org/) - A JavaScript library for building user interfaces
 * [React Native](https://facebook.github.io/react-native/) - A framework for building native apps using React
 * [expo](https://expo.io/) - A toolchain built around React Native to help us build native apps using JavaScript and React
-* [React Navigation (v2)](https://reactnavigation.org/) - Routing and navigation for your React Native apps
+* [React Navigation](https://reactnavigation.org/) - Routing and navigation for your React Native apps
 * [Redux](https://redux.js.org/) - Redux is a predictable state container for JavaScript apps
 * [react-redux](https://github.com/reactjs/react-redux) - Official React bindings for Redux
 
