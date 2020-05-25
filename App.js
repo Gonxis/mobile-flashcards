@@ -9,7 +9,7 @@ import {
   removeDeck
 } from './utils/api'
 
-export default class App extends Component {
+class App extends Component {
 
   state = {
     data: ''
@@ -88,3 +88,5 @@ export default class App extends Component {
     )
   }
 }
+
+export default App
