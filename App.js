@@ -12,6 +12,7 @@ import {
 import DeckList from './components/DeckList'
 import AddCard from './components/AddCard'
 import AddDeck from './components/AddDeck'
+import Quiz from './components/Quiz'
 
 class App extends Component {
 
@@ -22,7 +23,8 @@ class App extends Component {
         <View >
           {/* <DeckList /> */}
           {/* <AddCard /> */}
-          <AddDeck />
+          {/* <AddDeck /> */}
+          <Quiz />
         </View>
       </SafeAreaView>
     )
