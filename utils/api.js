@@ -1,4 +1,4 @@
-import { AsyncStorage } from 'react-native'
+import AsyncStorage from '@react-native-community/async-storage'
 import { decks } from './_DATA'
 
 const DECKS_STORAGE_KEY = 'MOBILE_FLASHCARDS:deck'
