@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text } from 'react-native'
 import tailwind from 'tailwind-rn'
-import CustomButton from '../components/CustomButton'
+import CustomButton from './CustomButton'
 
 class Deck extends Component {
 
