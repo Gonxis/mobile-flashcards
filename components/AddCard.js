@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, SafeAreaView, TextInput } from 'react-native'
-import CustomButton from '../components/CustomButton'
+import CustomButton from './CustomButton'
 import tailwind from 'tailwind-rn'
 
 class AddCard extends Component{
