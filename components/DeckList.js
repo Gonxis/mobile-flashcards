@@ -5,9 +5,10 @@ import Deck from './Deck'
 export class DeckList extends Component {
   render() {
     return (
-      <View>
-        <Deck />
-      </View>
+        <View>
+            <Text>Deck List</Text>
+            <Deck />
+        </View>
     );
   }
 }
