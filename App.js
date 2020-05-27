@@ -10,6 +10,7 @@ import {
 } from './utils/api'
 
 import DeckList from './components/DeckList'
+import AddCard from './components/AddCard'
 
 class App extends Component {
 
@@ -18,7 +19,8 @@ class App extends Component {
     return (
       <SafeAreaView>
         <View >
-          <DeckList />
+          {/* <DeckList /> */}
+          <AddCard />
         </View>
       </SafeAreaView>
     )

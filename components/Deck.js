@@ -37,10 +37,18 @@ class Deck extends Component {
                     <Text style={tailwind('pt-5 text-4xl')}>Deck Title</Text>
                     <Text style={tailwind('text-sm text-gray-600 pb-40')}># of cards</Text>
                     <View style={tailwind('h-40 justify-between')}>
-                        <CustomButton styleText={tailwind('text-black font-semibold text-center')} styleButton={tailwind('px-5 py-5 bg-white border border-black rounded justify-center w-48 h-12')} onPress={this.addCard}>
+                        <CustomButton 
+                            styleButton={tailwind('px-5 py-5 bg-white border border-black rounded justify-center w-48 h-12')} 
+                            styleText={tailwind('text-black font-semibold text-center')} 
+                            onPress={this.addCard}
+                        >
                             Add Card
                         </CustomButton>
-                        <CustomButton styleText={tailwind('text-white font-semibold text-center')} styleButton={tailwind('bg-black px-5 py-5 rounded justify-center w-48 h-12')} onPress={this.startQuiz}>
+                        <CustomButton 
+                            styleButton={tailwind('bg-black px-5 py-5 rounded justify-center w-48 h-12')} 
+                            styleText={tailwind('text-white font-semibold text-center')} 
+                            onPress={this.startQuiz}
+                        >
                             Start Quiz
                         </CustomButton>
                         <CustomButton styleText={tailwind('text-red-700')} onPress={this.delete}>
