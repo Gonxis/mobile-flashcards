@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, SafeAreaView, TextInput } from 'react-native'
+import { View, Text, TextInput } from 'react-native'
 import CustomButton from './CustomButton'
 import tailwind from 'tailwind-rn'
 
@@ -43,7 +43,7 @@ class AddCard extends Component{
 
     render() {
         return (
-            <SafeAreaView style={tailwind('flex-1 items-center justify-center bg-blue-100')}>
+            <View style={tailwind('flex-1 items-center justify-center bg-blue-100')}>
                 <View style={tailwind('px-5 py-3 items-center')}>
                         <TextInput
                             style={tailwind('h-10 m-2 w-full border border-blue-700 rounded bg-white')}
@@ -62,7 +62,7 @@ class AddCard extends Component{
                         Submit
                     </CustomButton>
                 </View>
-            </SafeAreaView>
+            </View>
         )
     }
 }
