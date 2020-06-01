@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler'
 import React, { Component } from 'react'
-import { SafeAreaView, Text, View, TouchableOpacity } from 'react-native'
+import { Text, View, TouchableOpacity } from 'react-native'
 import tailwind from 'tailwind-rn'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -26,7 +26,12 @@ class App extends Component {
     return (
       <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="DeckList" component={DeckList} />
+        <Stack.Screen name="DeckList">
+        {props => <DeckList {...props} />}
+        </Stack.Screen>
+        <Stack.Screen name="AddCard">
+        {props => <AddCard {...props} />}
+        </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
     )

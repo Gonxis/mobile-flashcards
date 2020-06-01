@@ -30,7 +30,7 @@ class Deck extends Component {
     }
 
     render() {
-
+        console.log("Navigation object: ", this.props.navigation)
         return (
             <View style={tailwind('flex-1 items-center justify-center bg-blue-100')}>
                 <View style={tailwind('flex-1 px-5 py-3 items-center')}>
@@ -40,7 +40,7 @@ class Deck extends Component {
                         <CustomButton 
                             styleButton={tailwind('px-5 py-5 bg-white border border-black rounded justify-center w-48 h-12')} 
                             styleText={tailwind('text-black font-semibold text-center')} 
-                            onPress={this.addCard}
+                            onPress={() => this.props.navigation.navigate('AddCard')}
                         >
                             Add Card
                         </CustomButton>
