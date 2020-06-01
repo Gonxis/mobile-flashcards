@@ -27,10 +27,13 @@ class App extends Component {
       <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="DeckList">
-        {props => <DeckList {...props} />}
+          {props => <DeckList {...props} />}
         </Stack.Screen>
         <Stack.Screen name="AddCard">
-        {props => <AddCard {...props} />}
+          {props => <AddCard {...props} />}
+        </Stack.Screen>
+        <Stack.Screen name="StartQuiz">
+          {props => <Quiz {...props} />}
         </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>

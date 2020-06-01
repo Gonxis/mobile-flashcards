@@ -6,7 +6,6 @@ export class DeckList extends Component {
   render() {
     return (
         <View>
-            <Text>Deck List</Text>
             <Deck navigation={this.props.navigation} />
         </View>
     );

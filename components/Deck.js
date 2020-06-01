@@ -47,7 +47,7 @@ class Deck extends Component {
                         <CustomButton 
                             styleButton={tailwind('bg-black px-5 py-5 rounded justify-center w-48 h-12')} 
                             styleText={tailwind('text-white font-semibold text-center')} 
-                            onPress={this.startQuiz}
+                            onPress={() => this.props.navigation.navigate('StartQuiz')}
                         >
                             Start Quiz
                         </CustomButton>
