@@ -30,7 +30,6 @@ class Deck extends Component {
     }
 
     render() {
-        console.log("Navigation object: ", this.props.navigation)
         return (
             <View style={tailwind('flex-1 items-center justify-center bg-blue-100')}>
                 <View style={tailwind('flex-1 px-5 py-3 items-center')}>
@@ -38,20 +37,23 @@ class Deck extends Component {
                     <Text style={tailwind('text-sm text-gray-600 pb-40')}># of cards</Text>
                     <View style={tailwind('h-40 justify-between')}>
                         <CustomButton 
-                            styleButton={tailwind('px-5 py-5 bg-white border border-black rounded justify-center w-48 h-12')} 
+                            styleButton={tailwind('px-5 py-5 bg-white border border-black rounded justify-center w-48 h-12 relative')} 
                             styleText={tailwind('text-black font-semibold text-center')} 
                             onPress={() => this.props.navigation.navigate('AddCard')}
                         >
                             Add Card
                         </CustomButton>
                         <CustomButton 
-                            styleButton={tailwind('bg-black px-5 py-5 rounded justify-center w-48 h-12')} 
+                            styleButton={tailwind('bg-black px-5 py-5 rounded justify-center w-48 h-12 relative')} 
                             styleText={tailwind('text-white font-semibold text-center')} 
                             onPress={() => this.props.navigation.navigate('StartQuiz')}
                         >
                             Start Quiz
                         </CustomButton>
-                        <CustomButton styleText={tailwind('text-red-700')} onPress={this.delete}>
+                        <CustomButton 
+                            styleButton={tailwind('relative')}
+                            styleText={tailwind('text-red-700')} 
+                            onPress={this.delete}>
                             Delete Deck
                         </CustomButton>
                     </View>
