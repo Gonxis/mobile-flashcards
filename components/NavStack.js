@@ -30,7 +30,7 @@ export default function NavStack() {
         />
         <Stack.Screen 
           name="AddCard" 
-          component={AddCard} 
+          component={AddDeck} 
           options={{ title: 'Add Card' }}
         />
         <Stack.Screen 

@@ -46,12 +46,12 @@ class AddCard extends Component{
             <View style={tailwind('flex-1 items-center justify-center bg-blue-100')}>
                 <View style={tailwind('px-5 py-3 items-center')}>
                         <TextInput
-                            style={tailwind('h-10 m-2 w-full border border-blue-700 rounded bg-white')}
+                            style={tailwind('h-10 m-2 w-64 border border-blue-700 rounded bg-white')}
                             placeholder="Question"
                             onChangeText={this.handleQuestion}
                         />
                         <TextInput
-                            style={tailwind('h-10 mb-16 w-full border border-blue-700 rounded bg-white')}
+                            style={tailwind('h-10 mb-16 w-64 border border-blue-700 rounded bg-white')}
                             placeholder="Answer"
                             onChangeText={this.handleAnswer}
                         />

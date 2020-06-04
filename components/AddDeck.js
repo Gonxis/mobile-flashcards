@@ -34,7 +34,7 @@ class AddDeck extends Component{
                 <View style={tailwind('px-5 py-3 items-center')}>
                         <Text style={tailwind('text-2xl')}>What is the title of your new deck?</Text>
                         <TextInput
-                            style={tailwind('h-10 mb-16 w-full border border-blue-700 rounded bg-white')}
+                            style={tailwind('h-10 mb-16 w-64 border border-blue-700 rounded bg-white')}
                             placeholder="Deck Title"
                             onChangeText={this.handleTitle}
                         />
