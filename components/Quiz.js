@@ -31,14 +31,14 @@ class Quiz extends Component{
                         See the answer of the question
                     </CustomButton>
                     <CustomButton 
-                        styleButton={tailwind('bg-green-100 px-5 py-5 rounded justify-center w-4/5 h-12')} 
+                        styleButton={tailwind('bg-green-100 rounded justify-center w-64 h-12')} 
                         styleText={tailwind('text-green-600 font-semibold text-center')} 
                         onPress={this.handleCorrect}
                     >
                         Correct
                     </CustomButton>
                     <CustomButton 
-                        styleButton={tailwind('bg-red-100 px-5 py-5 rounded justify-center w-4/5 h-12')} 
+                        styleButton={tailwind('bg-red-100 rounded justify-center w-64 h-12')} 
                         styleText={tailwind('text-red-600 font-semibold text-center')} 
                         onPress={this.handleIncorrect}
                     >

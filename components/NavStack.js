@@ -15,7 +15,7 @@ export default function NavStack() {
           screenOptions={{
             headerTitleAlign: 'center',
             headerStyle: {
-              backgroundColor: '#621FF7',
+              backgroundColor: 'rgb(29, 40, 64)',
             },
             headerTintColor: '#fff',
             headerTitleStyle :{
