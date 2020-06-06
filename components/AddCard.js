@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, TextInput } from 'react-native'
+import { View, TextInput } from 'react-native'
 import CustomButton from './CustomButton'
 import tailwind from 'tailwind-rn'
 
@@ -47,12 +47,12 @@ class AddCard extends Component{
                 <View style={tailwind('px-5 py-3 items-center')}>
                         <TextInput
                             style={tailwind('h-10 m-2 w-64 border border-blue-700 rounded bg-white')}
-                            placeholder="Question"
+                            placeholder='Question'
                             onChangeText={this.handleQuestion}
                         />
                         <TextInput
                             style={tailwind('h-10 mb-16 w-64 border border-blue-700 rounded bg-white')}
-                            placeholder="Answer"
+                            placeholder='Answer'
                             onChangeText={this.handleAnswer}
                         />
                     <CustomButton 

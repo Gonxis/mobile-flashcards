@@ -7,14 +7,6 @@ import { Provider } from "react-redux"
 import reducer from "./reducers"
 import middleware from "./middleware"
 
-import {
-  getDecks,
-  getDeck,
-  saveDeckTitle,
-  saveCardToDeck,
-  removeDeck
-} from './utils/api'
-
 import NavStack from './components/NavStack'
 
 class App extends Component {
