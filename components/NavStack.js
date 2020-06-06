@@ -2,10 +2,10 @@ import 'react-native-gesture-handler'
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 
-import DeckList from './DeckList'
 import AddCard from './AddCard'
 import Quiz from './Quiz'
 import Deck from './Deck'
+import Home from './Home'
 
 const Stack = createStackNavigator()
 
@@ -24,9 +24,9 @@ export default function NavStack() {
       }}
     >
       <Stack.Screen 
-        name='DeckList' 
-        component={DeckList}
-        options={{ title: 'Deck List' }}
+        name='Home' 
+        component={Home}
+        options={{ title: 'Home' }}
       />
       <Stack.Screen 
         name='Deck' 
