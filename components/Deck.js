@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { View, Text } from 'react-native'
 import tailwind from 'tailwind-rn'
 import CustomButton from './CustomButton'
-import TabsNav from './TabsNav'
 
 class Deck extends Component {
 
