@@ -3,6 +3,9 @@ import { View, Text, TextInput } from 'react-native'
 import CustomButton from './CustomButton'
 import tailwind from 'tailwind-rn'
 
+import { connect } from 'react-redux'
+import { handleAddDeckTitle } from '../actions'
+
 class AddDeck extends Component{
 
     state = {
@@ -15,16 +18,18 @@ class AddDeck extends Component{
         }))
     }
 
-    handleSubmit = (event) => {
-        event.preventDefault()
-    
+    handleSubmit = () => {
+        
+        const { navigation } = this.props
         const { title } = this.state
 
-        console.log(title)
+        this.props.handleAddDeckTitle(title)
     
         this.setState(() => ({
             title: ''
         }))
+
+        navigation.navigate('Deck', { title })
 
     }
 
@@ -51,4 +56,4 @@ class AddDeck extends Component{
     }
 }
 
-export default AddDeck
+export default connect(null, { handleAddDeckTitle })(AddDeck)

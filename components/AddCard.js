@@ -3,6 +3,9 @@ import { View, TextInput } from 'react-native'
 import CustomButton from './CustomButton'
 import tailwind from 'tailwind-rn'
 
+import { connect } from 'react-redux'
+import { handleAddCardToDeck } from './../actions'
+
 class AddCard extends Component{
 
     state = {
@@ -22,23 +25,24 @@ class AddCard extends Component{
         }))
     }
 
-    handleSubmit = (event) => {
-        event.preventDefault()
+    handleSubmit = () => {
     
         const { question, answer } = this.state
+        const { handleAddCardToDeck, route, navigation } = this.props
 
         const card = {
             question,
             answer
         }
 
-        console.log(card)
-    
+        handleAddCardToDeck(route.params.title, card)
+
         this.setState(() => ({
             question: '',
             answer: ''
         }))
 
+        navigation.goBack()
     }
 
     render() {
@@ -67,4 +71,4 @@ class AddCard extends Component{
     }
 }
 
-export default AddCard
+export default connect(null, { handleAddCardToDeck })(AddCard)

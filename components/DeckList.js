@@ -39,7 +39,8 @@ export class DeckList extends Component {
 							<TouchableOpacity
 								onPress={() =>
 									this.props.navigation.navigate('Deck', {
-										title: item.title
+                    title: item.title,
+                    questionsNum: item.questionsNum
 									})}>
 								<DeckInfo title={item.title} questionsNum={item.questionsNum} />
 							</TouchableOpacity>
