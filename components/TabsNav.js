@@ -15,9 +15,7 @@ export default function Tabs() {
                 let iconName
 
                 if (route.name === 'AddDeck') {
-                iconName = focused
-                    ? 'ios-add'
-                    : 'ios-add'
+                    iconName = 'ios-add'
                 } else if (route.name === 'DeckList') {
                 iconName = focused ? 'ios-list' : 'ios-list'
                 }
