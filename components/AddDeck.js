@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, TextInput } from 'react-native'
+import { View, Text, TextInput, KeyboardAvoidingView, Platform } from 'react-native'
 import CustomButton from './CustomButton'
 import tailwind from 'tailwind-rn'
 
@@ -35,23 +35,30 @@ class AddDeck extends Component{
 
     render() {
         return (
-            <View style={tailwind('flex-1 items-center justify-center bg-blue-100')}>
-                <View style={tailwind('px-5 py-3 items-center')}>
-                        <Text style={tailwind('text-2xl')}>What is the title of your new deck?</Text>
-                        <TextInput
-                            style={tailwind('h-10 mb-16 w-64 border border-blue-700 rounded bg-white')}
-                            placeholder="Deck Title"
-                            onChangeText={this.handleTitle}
-                        />
-                    <CustomButton 
-                        styleButton={tailwind('bg-black px-5 py-5 rounded justify-center w-4/5 h-12')} 
-                        styleText={tailwind('text-white font-semibold text-center')} 
-                        onPress={this.handleSubmit}
-                    >
-                        Create Deck
-                    </CustomButton>
+            <KeyboardAvoidingView
+                behavior={Platform.OS == "ios" ? "padding" : "height"}
+                style={tailwind('flex-1')}
+            >
+                <View style={tailwind('flex-auto items-center bg-blue-100')}>
+                    <View style={tailwind('px-5 py-3 flex-1 justify-start items-center')}>
+                            <Text style={tailwind('text-center text-2xl pb-4')}>What is the title of your new deck?</Text>
+                            <TextInput
+                                style={tailwind('h-10 mb-16 w-64 border border-blue-700 rounded bg-white')}
+                                placeholder="Deck Title"
+                                onChangeText={this.handleTitle}
+                            />
+                    </View>
+                    <View style={tailwind('justify-end pb-10')}>
+                        <CustomButton 
+                            styleButton={tailwind('bg-black rounded justify-center w-64 h-12')} 
+                            styleText={tailwind('text-white font-semibold text-center')} 
+                            onPress={this.handleSubmit}
+                        >
+                            Create Deck
+                        </CustomButton>
+                    </View>
                 </View>
-            </View>
+            </KeyboardAvoidingView>
         )
     }
 }

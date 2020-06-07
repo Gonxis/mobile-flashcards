@@ -18,7 +18,6 @@ class Deck extends Component {
 
     render() {
 
-        console.log(this.props)
         const { route } = this.props
 
         return (
@@ -28,7 +27,7 @@ class Deck extends Component {
                     <Text style={tailwind('text-sm text-gray-600 pb-40')}>{route.params.questionsNum || 0} {route.params.questionsNum === 1 ? 'card' : 'cards'}</Text>
                     <View style={tailwind('h-40 justify-between')}>
                         <CustomButton 
-                            styleButton={tailwind('px-5 py-5 bg-white border border-black rounded justify-center w-48 h-12 relative')} 
+                            styleButton={tailwind('bg-white border border-black rounded justify-center w-64 h-12')} 
                             styleText={tailwind('text-black font-semibold text-center')} 
                             onPress={() => this.props.navigation.navigate('AddCard', {
                                 title: route.params.title
@@ -37,9 +36,12 @@ class Deck extends Component {
                             Add Card
                         </CustomButton>
                         <CustomButton 
-                            styleButton={tailwind('bg-black px-5 py-5 rounded justify-center w-48 h-12 relative')} 
+                            styleButton={tailwind('bg-black rounded justify-center w-64 h-12')} 
                             styleText={tailwind('text-white font-semibold text-center')} 
-                            onPress={() => this.props.navigation.navigate('Quiz')}
+                            onPress={() => this.props.navigation.navigate('Quiz', {
+                                title: route.params.title,
+                                questionsNum: route.params.questionsNum
+                            })}
                         >
                             Start Quiz
                         </CustomButton>

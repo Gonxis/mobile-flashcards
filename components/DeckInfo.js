@@ -4,9 +4,9 @@ import tailwind from 'tailwind-rn'
 
 const DeckInfo = ({ title, questionsNum }) => {
 	return (
-		<View style={tailwind('bg-white rounded p-8 m-3 mt-4 justify-center items-center')}>
-			<Text style={{ fontSize: 22 }}>{title}</Text>
-			<Text style={{ fontSize: 18, color: 'gray' }}>
+		<View style={tailwind('p-4 m-3 mt-4 justify-center items-center')}>
+			<Text style={tailwind('text-2xl')}>{title}</Text>
+			<Text style={tailwind('text-gray-500 text-base')}>
 				{questionsNum} {questionsNum === 1 ? 'card' : 'cards'}
 			</Text>
 		</View>

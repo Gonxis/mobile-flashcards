@@ -31,7 +31,7 @@ export class DeckList extends Component {
     }
     
 		return (
-			<View style={tailwind('flex-1 content-center')}>
+			<View style={tailwind('flex-1 content-center bg-blue-100')}>
 			  <FlatList
 						data={deckList}
 						keyExtractor={(item) => item.deckId}
