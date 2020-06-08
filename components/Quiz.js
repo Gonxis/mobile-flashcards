@@ -3,6 +3,7 @@ import { View, Text, TextInput } from 'react-native'
 import CustomButton from './CustomButton'
 import tailwind from 'tailwind-rn'
 import QuizResults from './QuizResults'
+import Card from './Card'
 
 import { connect } from 'react-redux'
 
@@ -12,19 +13,29 @@ class Quiz extends Component {
 		correct: 0,
 		incorrect: 0,
         questionCount: this.props.deck.questions.length,
-        seeAnswer: false
+        seeAnswer: false,
+        currentQuestion: 0
     }
     
     handleAnswer = (response) => {
 
         response === 'correct' 
-            ? this.setState((prevState) => ({ correct: prevState.correct + 1 }))
-		    : this.setState((prevState) => ({ incorrect: prevState.incorrect + 1 }))
+            ? this.setState((prevState) => (
+                { 
+                    correct: prevState.correct + 1,
+                    currentQuestion: prevState.currentQuestion + 1
+                }
+            ))
+		    : this.setState((prevState) => (
+                { 
+                    incorrect: prevState.incorrect + 1,
+                    currentQuestion: prevState.currentQuestion + 1
+                }
+            ))
 		
     }
 
     handleSeeAnswer = () => {
-        /*
         if (this.state.seeAnswer === false) {
             this.setState({
                 seeAnswer: true
@@ -34,7 +45,6 @@ class Quiz extends Component {
                 seeAnswer: false
             })
         }
-        */
     }
 
     handleRestart = () => {
@@ -60,18 +70,18 @@ class Quiz extends Component {
         const { deck } = this.props
         const { title, questions } = deck
 
-        const { correct, incorrect, questionCount } = this.state
+        const { correct, incorrect, questionCount, currentQuestion, seeAnswer } = this.state
 
         const bool = true
 
-        if (questions.length === correct + incorrect) {
+        if (questionCount === currentQuestion) {
 			return (
 				<QuizResults
 					totalQuestions={questionCount}
 					correctAnswers={correct}
 					incorrectAnswers={incorrect}
 					navigation={this.props.navigation}
-					restart={this.handleRestart}
+                    restart={this.handleRestart}
 				/>
 			)
 		}
@@ -79,72 +89,15 @@ class Quiz extends Component {
         return (
             <View style={tailwind('flex-1 items-center justify-center bg-blue-100')}>
                 <View style={tailwind('px-5 py-3 items-center')}>
-                    {questions.map((question, idx) => (
-                        <View style={tailwind('flex-1 p-4 justify-around')} key={idx}>
-                            { bool ? (
-                                <View >
-                                    <View>
-                                        <Text style={tailwind('text-xl text-center')}>
-                                            Question {idx + 1} out of {questions.length} of {title} Deck
-                                        </Text>
-                                    </View>
-                                    <View style={tailwind('p-2')}>
-
-                                        <View style={tailwind('justify-center')}>
-                                            <Text style={tailwind('text-center text-black text-2xl')}>
-                                                {question.question}
-                                            </Text>
-                                        </View>
-                                        <CustomButton 
-                                            styleText={tailwind('text-red-700')} 
-                                            onPress={this.handleSeeAnswer()}
-                                        >
-                                            See the answer of the question
-                                        </CustomButton>
-                                    </View>
-                                </View>
-                            ) : (
-                                <View >
-                                    <View>
-                                        <Text style={tailwind('text-xl text-center')}>
-                                            Answer of question {idx + 1}
-                                        </Text>
-                                    </View>
-                                    <View style={tailwind('p-2')}>
-
-                                        <View style={tailwind('justify-center')}>
-                                            <Text style={tailwind('text-center text-black text-2xl')}>
-                                                {question.answer}
-                                            </Text>
-                                        </View>
-                                        <CustomButton 
-                                            styleText={tailwind('text-green-700')} 
-                                            onPress={this.handleSeeAnswer()}
-                                        >
-                                            See the question
-                                        </CustomButton>
-                                    </View>
-                                </View>
-                            )
-                            }
-                            <View style={tailwind('p-2 justify-end items-center')}>
-                                <CustomButton 
-                                    styleButton={tailwind('bg-green-100 rounded justify-center w-64 h-12')} 
-                                    styleText={tailwind('text-green-600 font-semibold text-center')} 
-                                    onPress={() => this.handleAnswer('correct', idx)}
-                                >
-                                    Correct
-                                </CustomButton>
-                                <CustomButton 
-                                    styleButton={tailwind('bg-red-100 rounded justify-center w-64 h-12 mt-1')} 
-                                    styleText={tailwind('text-red-600 font-semibold text-center')} 
-                                    onPress={() => this.handleAnswer('incorrect', idx)}
-                                >
-                                    Incorrect
-                                </CustomButton>
-                            </View>
-                        </View>
-				    ))}
+                    <Card 
+                        question={questions[currentQuestion]}
+                        currentQuestion={currentQuestion}
+                        questions={questions}
+                        handleSeeAnswer={this.handleSeeAnswer}
+                        handleAnswer={this.handleAnswer}
+                        title={title}
+                        seeAnswer={seeAnswer}
+                    />
                 </View>
             </View>
         )
