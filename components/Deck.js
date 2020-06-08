@@ -24,7 +24,18 @@ class Deck extends Component {
             <View style={tailwind('flex-1 items-center justify-center bg-blue-100')}>
                 <View style={tailwind('flex-1 px-5 py-3 items-center')}>
                     <Text style={tailwind('pt-5 text-4xl')}>{route.params.title}</Text>
-                    <Text style={tailwind('text-sm text-gray-600 pb-40')}>{route.params.questionsNum || 0} {route.params.questionsNum === 1 ? 'card' : 'cards'}</Text>
+                    <Text style={tailwind('text-sm text-gray-600 pb-40')}>
+                        {
+                            route.params.sumQuestion 
+                                ? route.params.questionsNum + route.params.sumQuestion
+                                : route.params.questionsNum || 0
+                        } 
+                        {
+                            route.params.sumQuestion 
+                                ? route.params.questionsNum + route.params.sumQuestion === 1 ? ' card' : ' cards'
+                                : route.params.questionsNum === 1 ? ' card' : ' cards'
+                        }
+                    </Text>
                     <View style={tailwind('h-40 justify-between')}>
                         <CustomButton 
                             styleButton={tailwind('bg-white border border-black rounded justify-center w-64 h-12')} 

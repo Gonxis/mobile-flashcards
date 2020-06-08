@@ -42,7 +42,7 @@ class AddCard extends Component{
             answer: ''
         })
 
-        navigation.goBack()
+        navigation.navigate('Deck', { sumQuestion: 1 })
     }
 
     render() {
