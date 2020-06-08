@@ -37,3 +37,9 @@ Below you'll find information about performing common tasks. The most recent ver
 ## Contributing
 
 You are always welcome to contribute with the project.
+
+## Testing
+
+Tested in: 
+* iOS Simulator (iPhone SE 2nd Generation)
+* Android Pie (Samsung Galaxy S8)
