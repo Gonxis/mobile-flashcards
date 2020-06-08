@@ -14,7 +14,8 @@ class Quiz extends Component {
 		incorrect: 0,
         questionCount: this.props.deck.questions.length,
         seeAnswer: false,
-        currentQuestion: 0
+        currentQuestion: 0,
+        restart: false
     }
     
     handleAnswer = (response) => {
@@ -51,7 +52,8 @@ class Quiz extends Component {
         this.setState({
 			questionCount: this.props.deck.questions.length,
 			correct: 0,
-			incorrect: 0
+            incorrect: 0,
+            currentQuestion: 0
 		})
 
 		this.props.navigation.navigate('Quiz')
@@ -71,8 +73,6 @@ class Quiz extends Component {
         const { title, questions } = deck
 
         const { correct, incorrect, questionCount, currentQuestion, seeAnswer } = this.state
-
-        const bool = true
 
         if (questionCount === currentQuestion) {
 			return (
