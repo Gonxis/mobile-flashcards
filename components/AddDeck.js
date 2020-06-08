@@ -25,15 +25,18 @@ class AddDeck extends Component{
 
         this.props.handleAddDeckTitle(title)
     
-        this.setState(() => ({
+        this.setState({
             title: ''
-        }))
+        })
 
         navigation.navigate('Deck', { title })
 
     }
 
     render() {
+
+        const { title } = this.state
+
         return (
             <KeyboardAvoidingView
                 behavior={Platform.OS == "ios" ? "padding" : "height"}
@@ -53,6 +56,7 @@ class AddDeck extends Component{
                             styleButton={tailwind('bg-black rounded justify-center w-64 h-12')} 
                             styleText={tailwind('text-white font-semibold text-center')} 
                             onPress={this.handleSubmit}
+                            disabled={title === ''}
                         >
                             Create Deck
                         </CustomButton>

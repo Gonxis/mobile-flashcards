@@ -37,15 +37,17 @@ class AddCard extends Component{
 
         handleAddCardToDeck(route.params.title, card)
 
-        this.setState(() => ({
+        this.setState({
             question: '',
             answer: ''
-        }))
+        })
 
         navigation.goBack()
     }
 
     render() {
+
+        const { question, answer } = this.state
         return (
             <KeyboardAvoidingView
                 behavior={Platform.OS == "ios" ? "padding" : "height"}
@@ -69,7 +71,9 @@ class AddCard extends Component{
                         <CustomButton 
                             styleButton={tailwind('bg-black rounded justify-center self-end w-64 h-12')} 
                             styleText={tailwind('text-white font-semibold text-center')} 
-                            onPress={this.handleSubmit}>
+                            onPress={this.handleSubmit}
+                            disabled={question === '' || answer === ''}
+                        >
                             Submit
                         </CustomButton>
                     </View>

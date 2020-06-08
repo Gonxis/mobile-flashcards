@@ -7,9 +7,9 @@ const Platform = RN.Platform
 const TouchableOpacity = Platform.OS === 'ios' ? RN.TouchableOpacity : RNGH.TouchableOpacity
 const Text = RN.Text
 
-export default function CustomButton ({children, onPress, styleText={}, styleButton={}}){
+export default function CustomButton ({disabled, children, onPress, styleText={}, styleButton={}}){
     return(
-        <TouchableOpacity style={[styleButton]} onPress={onPress}>
+        <TouchableOpacity style={[styleButton]} onPress={onPress} disabled={disabled}>
             <Text style={[tailwind('text-center'), styleText]}>{children}</Text>
         </TouchableOpacity>
     )
