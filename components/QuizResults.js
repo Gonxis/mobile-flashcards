@@ -22,7 +22,7 @@ class QuizResult extends Component {
 		const { bounceValue } = this.state
 
 		const percent = (correctAnswers / totalQuestions * 100).toFixed(0)
-		const totalPercentageStyle = percent > 50 ? tailwind('text-green-600 mt-16') : tailwind('text-red-600 mt-16')
+		const totalPercentageStyle = percent >= 50 ? tailwind('text-green-600 mt-16') : tailwind('text-red-600 mt-16')
 
 		return (
 			<View style={tailwind('flex-1 p-4 justify-around bg-blue-100 items-center')}>

@@ -58,14 +58,14 @@ class Card extends Component {
                     <CustomButton 
                         styleButton={tailwind('bg-green-100 rounded justify-center w-64 h-12')} 
                         styleText={tailwind('text-green-600 font-semibold text-center')} 
-                        onPress={() => this.props.handleAnswer}
+                        onPress={() => this.props.handleAnswer('correct')}
                     >
                         Correct
                     </CustomButton>
                     <CustomButton 
                         styleButton={tailwind('bg-red-100 rounded justify-center w-64 h-12 mt-1')} 
                         styleText={tailwind('text-red-600 font-semibold text-center')} 
-                        onPress={() => this.props.handleAnswer}
+                        onPress={() => this.props.handleAnswer('incorrect')}
                     >
                         Incorrect
                     </CustomButton>
