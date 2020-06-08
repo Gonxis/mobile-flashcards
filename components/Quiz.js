@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, TextInput } from 'react-native'
-import CustomButton from './CustomButton'
+import { View, Text } from 'react-native'
 import tailwind from 'tailwind-rn'
 import QuizResults from './QuizResults'
 import Card from './Card'
