@@ -46,12 +46,12 @@ Tested in:
 
 ## ScreenShots
 
-![DeckList](img/DeckList.png)
-![DeckList](img/AddDeck.png)
-![DeckList](img/Deck.png)
-![DeckList](img/AddCard.png)
-![DeckList](img/AddCard2.png)
-![DeckList](img/Quiz.png)
-![DeckList](img/Quiz2.png)
-![DeckList](img/CorrectAnswer.png)
-![DeckList](img/IncorrectAnswer.png)
+![DeckList](./img/DeckList.png)
+![DeckList](./img/AddDeck.png)
+![DeckList](./img/Deck.png)
+![DeckList](./img/AddCard.png)
+![DeckList](./img/AddCard2.png)
+![DeckList](./img/Quiz.png)
+![DeckList](./img/Quiz2.png)
+![DeckList](./img/CorrectAnswer.png)
+![DeckList](./img/IncorrectAnswer.png)
