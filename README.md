@@ -6,7 +6,7 @@ Chek out the demo: https://snack.expo.io/@gonxis/mobile-flashcards
 
 ## 🚀 How to use
 
-- Install with `yarn`. `npm install` or `npm i` is giving error in my project, please, install with yarn instead.
+- Install with `yarn` or `npm install` / `npm i`.
 - Run `expo start` to try it out.
 
 ### Scripts
