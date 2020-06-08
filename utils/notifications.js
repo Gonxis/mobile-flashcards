@@ -5,13 +5,7 @@ import * as Permissions from 'expo-permissions'
 
 const NOTIFICATION_KEY = 'MOBILE_FLASHCARDS:notification'
 
-export function clearAllNotifications() {
-    return AsyncStorage.removeItem(NOTIFICATION_KEY).then(() => {
-        Notifications.cancelAllScheduledNotificationsAsync
-    })
-}
-
-export function setLocalNotification() {
+export function setNotification() {
     return AsyncStorage.getItem(NOTIFICATION_KEY).then(JSON.parse).then((data) => {
         if (data === null) {
             Permissions.askAsync(Permissions.NOTIFICATIONS).then(({ status }) => {

@@ -8,12 +8,12 @@ import reducer from './reducers'
 import middleware from './middleware'
 
 import NavStack from './components/NavStack'
-import { setLocalNotification } from './utils/notifications'
+import { setNotification } from './utils/notifications'
 
 class App extends Component {
 
   componentDidMount() {
-		setLocalNotification()
+		setNotification()
 	}
 
   render() {

@@ -157,7 +157,7 @@ const mapStateToProps = ({ decks } , props) => {
 
 	return {
 		deck
-	};
-};
+	}
+}
 
 export default connect(mapStateToProps)(Quiz)
