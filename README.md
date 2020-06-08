@@ -37,3 +37,15 @@ Below you'll find information about performing common tasks. The most recent ver
 ## Contributing
 
 You are always welcome to contribute with the project.
+
+## ScreenShots
+
+![DeckList](img/DeckList.png)
+![DeckList](img/AddDeck.png)
+![DeckList](img/Deck.png)
+![DeckList](img/AddCard.png)
+![DeckList](img/AddCard2.png)
+![DeckList](img/Quiz.png)
+![DeckList](img/Quiz2.png)
+![DeckList](img/CorrectAnswer.png)
+![DeckList](img/IncorrectAnswer.png)
