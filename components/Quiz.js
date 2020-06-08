@@ -11,22 +11,30 @@ class Quiz extends Component {
     state = {
 		correct: 0,
 		incorrect: 0,
-		questionCount: this.props.deck.questions.length
+        questionCount: this.props.deck.questions.length,
+        seeAnswer: false
     }
     
     handleAnswer = (response) => {
 
-        if (response === 'correct') {
-			this.setState((prevState) => ({ correct: prevState.correct + 1 }));
-		}
-		else {
-			this.setState((prevState) => ({ incorrect: prevState.incorrect + 1 }));
-		}
+        response === 'correct' 
+            ? this.setState((prevState) => ({ correct: prevState.correct + 1 }))
+		    : this.setState((prevState) => ({ incorrect: prevState.incorrect + 1 }))
+		
     }
 
     handleSeeAnswer = () => {
-
-        console.log("See the answer")
+        /*
+        if (this.state.seeAnswer === false) {
+            this.setState({
+                seeAnswer: true
+            })
+        } else {
+            this.setState({
+                seeAnswer: false
+            })
+        }
+        */
     }
 
     handleRestart = () => {
@@ -34,7 +42,7 @@ class Quiz extends Component {
 			questionCount: this.props.deck.questions.length,
 			correct: 0,
 			incorrect: 0
-		});
+		})
 
 		this.props.navigation.navigate('Quiz')
     }
@@ -51,9 +59,10 @@ class Quiz extends Component {
         }
         const { deck } = this.props
         const { title, questions } = deck
-        const { question, answer } = questions
 
         const { correct, incorrect, questionCount } = this.state
+
+        const bool = true
 
         if (questions.length === correct + incorrect) {
 			return (
@@ -64,40 +73,78 @@ class Quiz extends Component {
 					navigation={this.props.navigation}
 					restart={this.handleRestart}
 				/>
-			);
+			)
 		}
 
         return (
             <View style={tailwind('flex-1 items-center justify-center bg-blue-100')}>
                 <View style={tailwind('px-5 py-3 items-center')}>
                     {questions.map((question, idx) => (
-                        <View key={idx}>
-                            {/*
-                            <Text style={tailwind('text-2xl')}>Question of the Quiz</Text>
-                            <CustomButton 
-                                styleText={tailwind('text-red-700')} 
-                                onPress={this.handleSeeAnswer(idx)}
-                            >
-                                See the answer of the question
-                            </CustomButton>
-                            <CustomButton 
-                                styleButton={tailwind('bg-green-100 rounded justify-center w-64 h-12')} 
-                                styleText={tailwind('text-green-600 font-semibold text-center')} 
-                                onPress={() => this.handleAnswer(answer.CORRECT, idx)}
-                            >
-                                Correct
-                            </CustomButton>
-                            <CustomButton 
-                                styleButton={tailwind('bg-red-100 rounded justify-center w-64 h-12')} 
-                                styleText={tailwind('text-red-600 font-semibold text-center')} 
-                                onPress={() => this.handleAnswer(answer.INCORRECT, idx)}
-                            >
-                                Incorrect
-                            </CustomButton>
-                            */}
-                            <Text>Abc</Text>
+                        <View style={tailwind('flex-1 p-4 justify-around')} key={idx}>
+                            { bool ? (
+                                <View >
+                                    <View>
+                                        <Text style={tailwind('text-xl text-center')}>
+                                            Question {idx + 1} out of {questions.length} of {title} Deck
+                                        </Text>
+                                    </View>
+                                    <View style={tailwind('p-2')}>
+
+                                        <View style={tailwind('justify-center')}>
+                                            <Text style={tailwind('text-center text-black text-2xl')}>
+                                                {question.question}
+                                            </Text>
+                                        </View>
+                                        <CustomButton 
+                                            styleText={tailwind('text-red-700')} 
+                                            onPress={this.handleSeeAnswer()}
+                                        >
+                                            See the answer of the question
+                                        </CustomButton>
+                                    </View>
+                                </View>
+                            ) : (
+                                <View >
+                                    <View>
+                                        <Text style={tailwind('text-xl text-center')}>
+                                            Answer of question {idx + 1}
+                                        </Text>
+                                    </View>
+                                    <View style={tailwind('p-2')}>
+
+                                        <View style={tailwind('justify-center')}>
+                                            <Text style={tailwind('text-center text-black text-2xl')}>
+                                                {question.answer}
+                                            </Text>
+                                        </View>
+                                        <CustomButton 
+                                            styleText={tailwind('text-green-700')} 
+                                            onPress={this.handleSeeAnswer()}
+                                        >
+                                            See the question
+                                        </CustomButton>
+                                    </View>
+                                </View>
+                            )
+                            }
+                            <View style={tailwind('p-2 justify-end items-center')}>
+                                <CustomButton 
+                                    styleButton={tailwind('bg-green-100 rounded justify-center w-64 h-12')} 
+                                    styleText={tailwind('text-green-600 font-semibold text-center')} 
+                                    onPress={() => this.handleAnswer('correct', idx)}
+                                >
+                                    Correct
+                                </CustomButton>
+                                <CustomButton 
+                                    styleButton={tailwind('bg-red-100 rounded justify-center w-64 h-12 mt-1')} 
+                                    styleText={tailwind('text-red-600 font-semibold text-center')} 
+                                    onPress={() => this.handleAnswer('incorrect', idx)}
+                                >
+                                    Incorrect
+                                </CustomButton>
+                            </View>
                         </View>
-				))}
+				    ))}
                 </View>
             </View>
         )
